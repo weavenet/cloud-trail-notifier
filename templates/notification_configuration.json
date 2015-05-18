@@ -1,0 +1,8 @@
+{
+  "CloudFunctionConfiguration": {
+    "Id": "CloudTrailNotifier",
+    "Events": ["s3:ObjectCreated:Put", "s3:ObjectCreated:Post"],
+    "CloudFunction": "LAMBDA_ARN",
+    "InvocationRole": "ROLE_ARN"
+  }
+}

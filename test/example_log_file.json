@@ -1,0 +1,100 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.02",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "ABCD123456ABCD123456",
+        "arn": "arn:aws:iam::123456123456:user/iamuser",
+        "accountId": "123456123456",
+        "accessKeyId": "ABCD123456ABCD123456",
+        "userName": "iamuser",
+        "sessionContext": {
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2015-05-07T03:31:57Z"
+          }
+        },
+        "invokedBy": "signin.amazonaws.com"
+      },
+      "eventTime": "2015-05-07T03:41:57Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "1.2.3.4",
+      "userAgent": "signin.amazonaws.com",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456123456:role/test-1234",
+        "roleSessionName": "iamuser"
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ABCD123456ABCD123456",
+          "expiration": "May 7, 2015 4:41:57 AM",
+          "sessionToken": "TOKEN123"
+        },
+        "assumedRoleUser": {
+          "assumedRoleId": "AROAJBFHPBZ6WK6UVSVLW:iamuser",
+          "arn": "arn:aws:sts::123456123456:assumed-role/test-1234/iamuser"
+        }
+      },
+      "requestID": "28d49008-a9e5-4255-beb9-25c6bbaab86e",
+      "eventID": "28d49008-a9e5-4255-beb9-25c6bbaab86e",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456123456"
+    },
+    {
+      "eventVersion": "1.02",
+      "userIdentity": {
+  	"type": "IAMUser",
+  	"principalId": "ABCD123456ABCD123456",
+  	"arn": "arn:aws:iam::123456123456:user/iamuser",
+    	"accountId": "123456123456",
+	"accessKeyId": "ABCD123456ABCD123456",
+	"userName": "iamuser"
+      },
+      "eventTime": "2015-05-17T15:48:03Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "1.2.3.4",
+      "userAgent": "aws-cli/1.7.22 Python/2.7.5 Darwin/13.4.0",
+      "errorCode": "AccessDenied",
+      "errorMessage": "User: arn:aws:iam::123456123456:user/iamuser is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::123456123456:role/MyUser-IAMRole-ABCDE12345",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "28d49008-a9e5-4255-beb9-25c6bbaab86e",
+      "eventID": "28d49008-a9e5-4255-beb9-25c6bbaab86e",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456123456"
+    },
+    {
+            "eventVersion": "1.02",
+            "userIdentity": {
+                "type": "IAMUser",
+                "principalId": "ABCD123456ABCD123456",
+                "arn": "arn:aws:iam::123456123456:user/iamuser",
+                "accountId": "123456123456",
+                "userName": "iamuser"
+            },
+            "eventTime": "2015-05-17T16:57:02Z",
+            "eventSource": "signin.amazonaws.com",
+            "eventName": "ConsoleLogin",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "1.2.3.4",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36",
+            "requestParameters": null,
+            "responseElements": {
+                "ConsoleLogin": "Success"
+            },
+            "additionalEventData": {
+                "LoginTo": "https://console.aws.amazon.com/console/home?nc2=h_m_mc&state=hashArgs%23&isauthcode=true",
+                "MobileVersion": "No",
+                "MFAUsed": "Yes"
+            },
+            "eventID": "28d49008-a9e5-4255-beb9-25c6bbaab86e",
+            "eventType": "AwsApiCall",
+            "recipientAccountId": "123456123456"
+        }
+  ]
+}

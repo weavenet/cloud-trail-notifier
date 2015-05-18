@@ -1,0 +1,87 @@
+{
+  "Description": "Creates an IAM role which can send notifications based on logs",
+  "Parameters": {
+    "BucketName": {
+      "Description": "Bucket to retrieve cloud trail logs",
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "IAMRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "Path": "/",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            },
+            {
+              "Sid": "",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "s3.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": "cloud-trail-notifier",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:*"
+                  ],
+                  "Resource": "arn:aws:logs:*:*:*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:GetObject"
+                  ],
+                  "Resource": [
+                    { "Fn::Join": [ "", [ "arn:aws:s3:::", { "Ref": "BucketName" } ] ] },
+                    { "Fn::Join": [ "", [ "arn:aws:s3:::", { "Ref": "BucketName" }, "/*" ] ] }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "sns:Publish"
+                  ],
+		  "Resource": { "Fn::Join": [ "", [ "arn:aws:sns:",
+                                                    { "Ref": "AWS::Region"  },
+          		                            ":",
+                                                    { "Ref": "AWS::AccountId" },
+                                                    ":CloudTrailAlerts" ] ] }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "IAMRole": {
+      "Description": "Role for reading sending notifications on logs",
+      "Value": {
+        "Fn::GetAtt": [
+          "IAMRole",
+          "Arn"
+        ]
+      }
+    }
+  }
+}

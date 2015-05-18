@@ -1,0 +1,8 @@
+{
+  "s3Region" : "us-west-2",
+  "snsTopicArn" : "arn:aws:sns:us-west-2:123456123456:CloudTrailAlerts"
+  "events" : {
+    "sts.amazonaws.com" : ["AssumeRole"],
+    "signin.amazonaws.com" : ["ConsoleLogin", "SwitchRole"]
+  }
+}

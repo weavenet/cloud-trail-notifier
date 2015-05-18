@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "aws-sdk": "2.1.27"
+  },
+  "devDependencies": {
+    "assert": "1.3.0",
+    "sinon": "1.14.1"
+  },
+  "name": "CloudTrailNotifier",
+  "version": "0.0.1",
+  "description": "Send SNS alerts based on Cloud Trail events.",
+  "main": "CloudTrailNotifier.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/brettweavnet/cloud-trail-notifier"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "@brettweavnet",
+  "license": "MIT"
+}
