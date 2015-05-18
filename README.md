@@ -36,6 +36,8 @@ Cloud Trail Notifier is intended for those who:
 
 # Setup
 
+**Setup is a bit complex. In the future, I'd like to convert the below entirely to Cloud Formation**
+
 Clone down this repo, and then set the region where you which to create the resources
 
 ```
