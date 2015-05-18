@@ -130,9 +130,9 @@ You will need to copy the **config.json.example** file to **config.json**.
 
 This file specifies:
 
-**s3Region**: Region of S3 bucket created above.
-**snsTopicArn**: ARN of the SNS topic created above.
-**events**: Events for which you want to receive a notification.
+**s3Region**: Region of S3 bucket created above.  
+**snsTopicArn**: ARN of the SNS topic created above.  
+**events**: Events for which you want to receive a notification.  
 
 Once you have created the config file, execute the deploy script to build the zip
 and update the lambda function created above using the **deploy.sh** script:
