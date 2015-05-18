@@ -23,7 +23,7 @@ This project is based on the [Handling AWS CloudTrail Events](https://docs.aws.a
 
 Cloud Trail Notifier is intended for those who:
 
-* Want basic alerts on specific CloudTrail events in an AWS account (Account Created, Console Login, etc).
+* Want basic alerts on specific CloudTrail events in an AWS account (Console Login, etc).
 * Are comfortable working with AWS services.
 * Want quick setup, minimal costs and no instances to support.
 
