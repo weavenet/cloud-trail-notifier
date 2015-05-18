@@ -12,8 +12,7 @@ It is:
 in an [AWS S3](https://aws.amazon.com/s3/) bucket.
 * That sends notifications via [AWS SNS](https://aws.amazon.com/sns) in the format below.
 
-*Received CloudTrail event: 'ConsoleLogin' via 'signin.amazonaws.com' @ 2015-05-18T15:16:43Z from IP '1.2.3.4'.*
-
+*Received CloudTrail event: 'ConsoleLogin' via 'signin.amazonaws.com' @ 2015-05-18T15:16:43Z from IP '1.2.3.4'.*  
 *Received CloudTrail event: 'AssumeRole' via 'sts.amazonaws.com' @ 2015-05-18T15:17:37Z from IP '1.2.3.4'.*
 
 This project is based on the [Handling AWS CloudTrail Events](https://docs.aws.amazon.com/lambda/latest/dg/wt-cloudtrail-events-adminuser.html) walk through.
