@@ -1,5 +1,7 @@
 # Cloud Trail Notifier
 
+[![Build Status](https://secure.travis-ci.org/brettweavnet/cloud-trail-notifier.png)](http://travis-ci.org/brettweavnet/cloud-trail-notifier)
+
 ## Overview
 
 **Cloud Trail Notifier** is an experiment to send alerts based on events you
