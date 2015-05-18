@@ -3,9 +3,7 @@
 ## Overview
 
 **Cloud Trail Notifier** is an experiment to send alerts based on events you
-specify in your AWS account.
-
-It is:
+specify in your AWS account. It is:
 
 * A NodeJS applications which runs on [AWS Lambda](https://aws.amazon.com/lambda/) (No Instances).
 * Triggerd by [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) logs being placed
