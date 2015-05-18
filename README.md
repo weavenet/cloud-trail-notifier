@@ -13,6 +13,7 @@ in an [AWS S3](https://aws.amazon.com/s3/) bucket.
 * That sends notifications via [AWS SNS](https://aws.amazon.com/sns) in the format below.
 
 *Received CloudTrail event: 'ConsoleLogin' via 'signin.amazonaws.com' @ 2015-05-18T15:16:43Z from IP '1.2.3.4'.*
+
 *Received CloudTrail event: 'AssumeRole' via 'sts.amazonaws.com' @ 2015-05-18T15:17:37Z from IP '1.2.3.4'.*
 
 This project is based on the [Handling AWS CloudTrail Events](https://docs.aws.amazon.com/lambda/latest/dg/wt-cloudtrail-events-adminuser.html) walk through.
@@ -28,6 +29,7 @@ Cloud Trail Notifier is intended for those who:
 ## Pre-reqs
 
 * NodeJS
+* NPM
 * AWS CLI installed
 * AWS Credentials
 
@@ -48,7 +50,9 @@ aws s3 mb s3://my-account-cloud-trail-logs
 Enable **CloudTrail** and send logs to the bucket created above.
 
 ```
-aws cloudtrail create-trail --name default --s3-bucket-name my-account-cloud-trail-logs
+aws cloudtrail create-trail \
+    --name default \
+    --s3-bucket-name my-account-cloud-trail-logs
 ```
 
 Create an **SNS Topic** which will be used to send notifications on the desired logs.
@@ -60,7 +64,9 @@ aws sns create-topic --name CloudTrailAlerts
 Subscribe your email address to TopicARN created above.
 
 ```
-aws sns --topic-arn ARN --protocol email --notification-endpoint user@example.com
+aws sns --topic-arn ARN \
+        --protocol email \
+        --notification-endpoint user@example.com
 ```
 
 Update the parameter value below with the bucket name and create the role which will
