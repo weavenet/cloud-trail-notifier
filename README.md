@@ -130,7 +130,7 @@ check **CloudWatch Logs** for the Lambda function's results.
 
 # Build / Deploy
 
-You will need to copy the **config.json.example** file to **config.json**.
+You will need to copy the **config.json.example** file to **config.json** and update it.
 
 This file specifies:
 
